@@ -1,0 +1,38 @@
+import java.sql.Wrapper
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.9.+'
+        classpath 'commons-logging:commons-logging:1.1.1'
+    }
+}
+apply plugin: 'android'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+def roboSpiceVersion = "1.4.9"
+def googleHttpClientVersion = "1.17.0-rc"
+
+dependencies {
+    compile 'com.google.android.gms:play-services:3.2.65'
+}
+
+android {
+    packagingOptions {
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/LICENSE.txt'
+    }
+
+    compileSdkVersion 17
+    buildToolsVersion "19.0.3"
+
+    defaultConfig {
+        minSdkVersion 8
+    }
+}
